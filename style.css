@@ -1,0 +1,31 @@
+.number, .top, .operator {
+  display: inline-block;
+  border: 2px solid black;
+  height: 60px;
+  width: 60px;
+  padding: 0px;
+  margin: -2px; }
+
+.display {
+  display: inline-block;
+  border: 2px solid black;
+  height: 60px;
+  width: 235.5px;
+  background-color: #292929;
+  margin: -2px;
+  color: white; }
+
+#zero {
+  width: 120px; }
+
+.operator {
+  background-color: #f69332;
+  color: white; }
+
+.top {
+  background-color: #d6d6d6;
+  color: black; }
+
+.number {
+  background-color: #e0e0e0;
+  color: black; }
