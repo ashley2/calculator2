@@ -8,64 +8,80 @@ function init() {
   var $operatorButton = $('.operator');
   var $topButton = $('.top');
   var inputVal = '';
-  var calculatedVal = "";
+  var answer = "";
   var $display = $('.display');
+  var operator;
 
   function updateDisplay(val){
     $display.text(val);
 
   }
 
-
-
   $numButton.click(function(evt) {
     var number = $(this).text();
+    if (number === "." && /\./.test(inputVal)){
+      return;
+  };
     inputVal += number;
-     updateDisplay(inputVal);
+    updateDisplay(inputVal);
   });
 
   $operatorButton.click(function(evt) {
-    if (calculatedVal === ""){
-      calculatedVal = inputVal; 
-      inputVal = '';
+    if (answer === ""){
+      answer = inputVal; 
+    } else if (inputVal !== '') {
+      switch (operator) {
+        case "X":
+        answer *= inputVal;
+        updateDisplay(answer);
+        break
+        case "/":
+        answer =  answer / inputVal;
+        updateDisplay(answer);
+        break
+        case "+":
+        answer = parseFloat(answer)+parseFloat(inputVal);
+        updateDisplay(answer);
+        break
+        case "-":
+        answer -= inputVal;
+        updateDisplay(answer);
+        break
+        case "=":
+        updateDisplay(answer);
+      } 
     }
-    var operator = $(this).text();
-    switch (operator) {
-      case "X":
-      var answer = inputVal * calculatedVal;
-      updateDisplay(answer);
-      break
-      case "/":
-      var answer =  calculatedVal / inputVal;
-      updateDisplay(answer);
-      break
-      case "+":
-      var answer = inputVal + calculatedVal;
-      updateDisplay(answer);
-      break
-      case "-":
-      var answer = calculatedVal - inputVal;
-      updateDisplay(answer);
-      break
-    }
-  });
+    operator = $(this).text();
+    inputVal = '';
 
-
+  })
   $topButton.click(function(evt) {
     console.log("button clicked!");
     var top = $(this).text();
-      switch (top) {
-        case "C":
-        $display.text(0);
-        inputVal = '';
-        calculatedVal = "";
-
+    switch (top) {
+      case "C":
+      $display.text(0);
+      inputVal = '';
+      answer = "";
+      break;
+      case "%":
+      answer = inputVal /100
+      updateDisplay(answer);
+      break
+      case "+/-":
+      if (inputVal !== "") {
+        inputVal *= -1;
+        updateDisplay(inputVal);
+      } else {
+        answer *= -1;
+      updateDisplay(answer); 
       }
-    });
+    }
+});
 
 
 
 
 
 
-  }
+}
