@@ -31,7 +31,7 @@ function init() {
       answer = inputVal; 
     } else if (inputVal !== '') {
       switch (operator) {
-        case "X":
+        case "x":
         answer *= inputVal;
         updateDisplay(answer);
         break
