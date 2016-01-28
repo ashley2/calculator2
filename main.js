@@ -14,16 +14,19 @@ function init() {
 
   function updateDisplay(val){
     $display.text(val);
-
   }
 
   $numButton.click(function(evt) {
-    var number = $(this).text();
-    if (number === "." && /\./.test(inputVal)){
-      return;
-  };
-    inputVal += number;
-    updateDisplay(inputVal);
+    if (inputVal.length < 10){
+      var number = $(this).text();
+      if (number === "." && /\./.test(inputVal)){
+        return;
+      };
+      inputVal += number;
+      updateDisplay(inputVal);
+    } else {
+    $display.fadeOut('fast').fadeIn('fast');
+    }
   });
 
   $operatorButton.click(function(evt) {
@@ -56,28 +59,32 @@ function init() {
 
   })
   $topButton.click(function(evt) {
-    console.log("button clicked!");
     var top = $(this).text();
     switch (top) {
       case "C":
       $display.text(0);
       inputVal = '';
-      answer = "";
+      answer = '';
       break;
       case "%":
-      answer = inputVal /100
-      updateDisplay(answer);
+      if (inputVal !== ''){
+        inputVal = inputVal/100;
+        updateDisplay(inputVal);
+      } else {
+        answer = answer/100;
+        updateDisplay(answer);
+      }
       break
       case "+/-":
-      if (inputVal !== "") {
+      if (inputVal !== '') {
         inputVal *= -1;
         updateDisplay(inputVal);
       } else {
         answer *= -1;
-      updateDisplay(answer); 
+        updateDisplay(answer); 
       }
     }
-});
+  });
 
 
 
