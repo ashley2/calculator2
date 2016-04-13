@@ -1,3 +1,19 @@
+a {
+  text-decoration: none;
+  font-family: arial;
+  color: #630800;
+  font-size: .8rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: right; }
+
+img {
+  height: 60px;
+  float: left; }
+
 .container {
   height: 100vh;
   width: 100vw;
@@ -13,7 +29,7 @@
   border: 2px solid black;
   display: inline-block;
   border-radius: 10px;
-  box-shadow: inset 0 0 0 1px #d6d6d6,0 5px 15px #000000; }
+  box-shadow: inset 0 0 0 1px #d6d6d6, 0 5px 15px #000000; }
 
 .displayBox {
   display: inline-block;
@@ -39,10 +55,6 @@
   border: none;
   border-radius: 50px; }
 
-img {
-  height: 60px;
-  float: left; }
-
 .display {
   border: 2px solid black;
   height: 60px;
@@ -63,46 +75,39 @@ img {
   text-shadow: 0 2px #cc5800;
   box-shadow: inset 0 0 10px 1px #cc5800,0 5px 15px #994200;
   background-image: linear-gradient(top, #ff7d1a, #cc5800); }
-
-.operator:hover {
-  background-color: #ff7d1a;
-  text-shadow: 0 2px #fa6800;
-  box-shadow: inset 0 0 10px 1px #cc5800,0 5px 15px #994200; }
-
-.operator:active {
-  box-shadow: inset 0 0 0 1px #cc5800,inset 0 5px 30px #994200; }
+  .operator:hover {
+    background-color: #ff7d1a;
+    text-shadow: 0 2px #fa6800;
+    box-shadow: inset 0 0 10px 1px #cc5800,0 5px 15px #994200; }
+  .operator:active {
+    box-shadow: inset 0 0 0 1px #cc5800,inset 0 5px 30px #994200; }
 
 .top {
   background-color: #d6d6d6;
   text-shadow: 0 2px #bfbfbf;
   box-shadow: inset 0 0 10px 1px #bfbfbf,0 5px 15px #a6a6a6;
   background-image: linear-gradient(top, #cccccc, #bfbfbf); }
-
-.top:hover {
-  background-color: #e6e6e6;
-  text-shadow: 0 2px #d6d6d6;
-  box-shadow: inset 0 0 10px 1px #bfbfbf,0 5px 15px #a6a6a6; }
-
-.top:active {
-  box-shadow: inset 0 0 0 1px #bfbfbf,inset 0 5px 30px #a6a6a6; }
+  .top:hover {
+    background-color: #e6e6e6;
+    text-shadow: 0 2px #d6d6d6;
+    box-shadow: inset 0 0 10px 1px #bfbfbf,0 5px 15px #a6a6a6; }
+  .top:active {
+    box-shadow: inset 0 0 0 1px #bfbfbf,inset 0 5px 30px #a6a6a6; }
 
 .number {
   background-color: #630800;
   text-shadow: 0 2px #330500;
   box-shadow: inset 0 0 10px 1px #330500,0 5px 15px #330500;
   background-image: linear-gradient(top, #660a00, #330500); }
+  .number:hover {
+    background-color: #800e00;
+    text-shadow: 0 2px #630800;
+    box-shadow: inset 0 0 10px 1px #330500,0 5px 15px #330500; }
+  .number:active {
+    box-shadow: inset 0 0 0 1px #330500, inset 0 5px 30px #330500; }
 
-.number:hover {
-  background-color: #800e00;
-  text-shadow: 0 2px #630800;
-  box-shadow: inset 0 0 10px 1px #330500,0 5px 15px #330500; }
-
-.number:active {
-  box-shadow: inset 0 0 0 1px #330500, inset 0 5px 30px #330500; }
-
-.number, .top, .operator:focus {
+.number:focus, .top:focus, .operator:focus {
   outline: none; }
 
-/* #d6d6d6 top three grey
-//#630800- hokie maroon
-//#fa6800 - hokie orange */
+.number:hover, .top:hover, .operator:hover {
+  cursor: pointer; }

@@ -1,2 +1,2 @@
-# calculator2
-iphone calc
+# Calculator
+- design inspired by Virginia Tech
